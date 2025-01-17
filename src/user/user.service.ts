@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { hash } from 'argon2'
-import { AuthDto } from 'src/dto/auth.dto'
+import { AuthDto } from 'src/auth/dto/auth.dto'
 import { PrismaService } from 'src/prisma.service'
 import { UserDto } from './user.dto'
 
@@ -61,7 +61,6 @@ export class UserService {
       },
     })
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password, ...rest } = profile
 
     return {
